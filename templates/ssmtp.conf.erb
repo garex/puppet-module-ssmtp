@@ -14,7 +14,7 @@ mailhub=<%= mailhub %>
 
 # The person who gets all mail for userids < 1000
 # Make this empty to disable rewriting.
-# root=yourmail@mail.com
+root=<%= root %>
 
 # Where will the mail seem to come from?
 # rewriteDomain=
@@ -25,7 +25,7 @@ hostname=<%= fqdn %>
 # Store entry into header list
 # addHeader
 
-<% if authUser -%>
+<% if @authUser -%>
 # Auth credentials
 authUser=<%= authUser %>
 authPass=<%= authPass %>
@@ -52,7 +52,7 @@ useSTARTTLS=<%= useSTARTTLS ? 'yes' : 'no' %>
 useTLSCert=<%= useTLSCert ? 'yes' : 'no' %>
 
 # Use this RSA certificate.
-TLSCert=<%= TLSCert %>
+TLSCert=<%= tlsCert %>
 <% end -%>
 
 # Get enhanced (*really* enhanced) debugging information in the logs

@@ -1,7 +1,9 @@
 class ssmtp (
   $mailhub,
 
-  # Auth with login/password
+  $root         = undef,
+
+  # Auth part
   $authUser     = undef,
   $authPass     = undef,
   $authMethod   = 'login',    # login, cram-md5
@@ -9,7 +11,7 @@ class ssmtp (
   $useTLS       = false,
   $useSTARTTLS  = false,
   $useTLSCert   = false,
-  $TLSCert      = '/dev/null' # <path to your cert>
+  $tlsCert      = '/dev/null' # <path to your cert>
 ) {
 
   package {"Installing sSMTP package":

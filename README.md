@@ -25,3 +25,17 @@ When you have server, where all things are setted up by ISP or admin.
     }
 
 ```
+
+### Use your gmail account as SMTP
+
+```ruby
+
+    class {"ssmtp":
+      authUser    => "your.login@gmail.com",
+      authPass    => "yourpassword",
+      mailhub     => "smtp.gmail.com:587",
+      useTLS      => true,
+      useSTARTTLS => true,
+    }
+
+```
