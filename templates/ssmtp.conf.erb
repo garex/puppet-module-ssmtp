@@ -4,12 +4,12 @@
 
 # The person who gets all mail for userids < 1000
 # Make this empty to disable rewriting.
-root=postmaster
+# root=yourmail@mail.com
 
 # The place where the mail goes. The actual machine name is required
 # no MX records are consulted. Commonly mailhosts are named mail.domain.com
 # The example will fit if you are in domain.com and your mailhub is so named.
-mailhub=mail
+mailhub=smtp.yourmail.com
 
 # Example for SMTP port number 2525
 # mailhub=mail.your.domain:2525
@@ -18,26 +18,45 @@ mailhub=mail
 # Example for SSL encrypted connection
 # mailhub=mail.your.domain:465
 
+# Can be provided inside "mailhub" setting
+# remotePort
+
 # Where will the mail seem to come from?
-rewriteDomain=
+# rewriteDomain=
 
 # The full hostname
-hostname=_HOSTNAME_
+hostname=yourserver.example.com
+
+# Store entry into header list
+# addHeader
+
+# Auth credentials
+# authUser=someone
+# authPass=123456
+
+# Mechanism for SMTP authentication: cram-md5
+# authMethod=cram-md5
+
+# Use old AUTH LOGIN username style
+# useOldAUTH=YES
 
 # Set this to never rewrite the "From:" line (unless not given) and to
 # use that address in the "from line" of the envelope.
-#FromLineOverride=YES
+fromLineOverride=YES
 
 # Use SSL/TLS to send secure messages to server.
-#UseTLS=YES
+# useTLS=YES
+
+# SSL only after STARTTLS (RFC2487)
+# useSTARTTLS=YES
 
 # Use SSL/TLS certificate to authenticate against smtp host.
-#UseTLSCert=YES
+# useTLSCert=YES
 
 # Use this RSA certificate.
-#TLSCert=/etc/ssl/certs/ssmtp.pem
+# TLSCert=/etc/ssl/certs/ssmtp.pem
 
 # Get enhanced (*really* enhanced) debugging information in the logs
 # If you want to have debugging of the config file parsing, move this option
 # to the top of the config file and uncomment
-#Debug=YES
+# debug=YES
