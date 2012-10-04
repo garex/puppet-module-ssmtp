@@ -16,14 +16,11 @@ mailhub=<%= mailhub %>
 # Make this empty to disable rewriting.
 # root=yourmail@mail.com
 
-# Can be provided inside "mailhub" setting
-# remotePort
-
 # Where will the mail seem to come from?
 # rewriteDomain=
 
 # The full hostname
-hostname=yourserver.example.com
+hostname=<%= fqdn %>
 
 # Store entry into header list
 # addHeader
@@ -32,7 +29,7 @@ hostname=yourserver.example.com
 # authUser=someone
 # authPass=123456
 
-# Mechanism for SMTP authentication: cram-md5
+# Mechanism for SMTP authentication: login OR cram-md5
 # authMethod=cram-md5
 
 # Use old AUTH LOGIN username style
