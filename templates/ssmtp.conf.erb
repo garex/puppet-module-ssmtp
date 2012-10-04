@@ -1,22 +1,20 @@
-#
-# /etc/ssmtp.conf -- a config file for sSMTP sendmail.
-#
-
-# The person who gets all mail for userids < 1000
-# Make this empty to disable rewriting.
-# root=yourmail@mail.com
+# A config file for sSMTP sendmail.
+# ! Managed by puppet !
 
 # The place where the mail goes. The actual machine name is required
 # no MX records are consulted. Commonly mailhosts are named mail.domain.com
 # The example will fit if you are in domain.com and your mailhub is so named.
-mailhub=smtp.yourmail.com
-
 # Example for SMTP port number 2525
 # mailhub=mail.your.domain:2525
 # Example for SMTP port number 25 (Standard/RFC)
 # mailhub=mail.your.domain
 # Example for SSL encrypted connection
 # mailhub=mail.your.domain:465
+mailhub=<%= mailhub %>
+
+# The person who gets all mail for userids < 1000
+# Make this empty to disable rewriting.
+# root=yourmail@mail.com
 
 # Can be provided inside "mailhub" setting
 # remotePort
