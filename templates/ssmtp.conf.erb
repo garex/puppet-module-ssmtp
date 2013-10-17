@@ -17,7 +17,11 @@ mailhub=<%= @mailhub %>
 root=<%= @root %>
 
 # Where will the mail seem to come from?
+<% if @rewriteDomain -%>
+rewriteDomain=<%= @rewriteDomain %>
+<% else -%>
 # rewriteDomain=
+<% end -%>
 
 # The full hostname
 hostname=<%= @fqdn %>

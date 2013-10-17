@@ -3,6 +3,7 @@ class ssmtp (
 
   $root         = undef,
 
+  $rewriteDomain= undef,
   # Auth part
   $authUser     = undef,
   $authPass     = undef,
